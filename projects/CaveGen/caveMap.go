@@ -141,7 +141,11 @@ func (cave *Cave) countNeighbors(x, y int) bool {
 			}
 		}
 	}
-	return false
+	if count < 4 {
+		return false
+	} else {
+		return cave.Map[y][x]
+	}
 }
 
 func (cave *Cave) newGrid() {
